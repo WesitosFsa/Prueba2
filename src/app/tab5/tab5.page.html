@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Guardador de Texto
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-text color="secondary">
+          <h2>Introduce el texto que deseas guardar</h2>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-textarea [(ngModel)]="texto" placeholder="Escribe aquí..."></ion-textarea>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="block" (click)="guardarTexto()">Guardar Texto</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <p *ngIf="textoGuardado">Texto guardado: {{ textoGuardado }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
