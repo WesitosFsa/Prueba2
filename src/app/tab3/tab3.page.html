@@ -7,20 +7,27 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-row class="ion-justify-content-around">
-    <ion-col size="3"> 
-      <ion-datetime presentation="date" [preferWheel]="true" [(ngModel)]="date1"></ion-datetime>
-    </ion-col>
-    <ion-col size="3"> 
-      <ion-datetime presentation="date" [preferWheel]="true" [(ngModel)]="date2"></ion-datetime>
-    </ion-col>
-  </ion-row>
-  <ion-row class="ion-justify-content-around">
-    <ion-button expand="full" (click)="calculateDifference()">Calcular la fecha entre los dos calendarios</ion-button>
-  </ion-row>
-  <ion-row class="ion-justify-content-around">
-    <ion-col size="12">
-      <p>{{ difference }}</p>
-    </ion-col>
-  </ion-row>
+  <ion-grid>
+    <ion-row class="ion-justify-content-around">
+      <ion-col size="12" size-md="3">
+        <ion-datetime presentation="date" [preferWheel]="true" [(ngModel)]="date1"></ion-datetime>
+      </ion-col>
+      <ion-col size="12" size-md="3">
+        <ion-datetime presentation="date" [preferWheel]="true" [(ngModel)]="date2"></ion-datetime>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row class="ion-justify-content-around">
+      <ion-col size="12">
+        <ion-button expand="full" (click)="calculateDifference()">Calcular la fecha entre los dos calendarios</ion-button>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row class="ion-justify-content-around">
+      <ion-col size="12">
+        <p>{{ difference }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
 </ion-content>

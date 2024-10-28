@@ -21,8 +21,11 @@ export class Tab5Page {
     const enlace = document.createElement('a');
     enlace.href = url;
     enlace.download = nombreArchivo;
-    enlace.click();
 
-    window.URL.revokeObjectURL(url); // Limpiar URL después de la descarga
+    document.body.appendChild(enlace); // Añadir el enlace al DOM
+    enlace.click();
+    document.body.removeChild(enlace); // Eliminar el enlace después de la descarga
+
+    window.URL.revokeObjectURL(url); // Limpiar la URL después de la descarga
   }
 }
