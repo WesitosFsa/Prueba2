@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 
 @Component({
   selector: 'app-tab5',
@@ -6,26 +7,29 @@ import { Component } from '@angular/core';
   styleUrls: ['tab5.page.scss'],
 })
 export class Tab5Page {
-  texto: string = '';
-  textoGuardado: string | null = null;
+  texto: string = ''; // Texto ingresado por el usuario
+  textoGuardado: string | null = null; // Texto guardado y mostrado en pantalla
 
-  guardarTexto() {
+  async guardarTexto() {
     this.textoGuardado = this.texto;
-    this.descargarArchivo(this.texto, 'texto_guardado.txt');
+    await this.descargarArchivo(this.texto, 'texto_guardado.txt');
   }
 
-  descargarArchivo(contenido: string, nombreArchivo: string) {
-    const blob = new Blob([contenido], { type: 'text/plain' });
-    const url = window.URL.createObjectURL(blob);
+  // Función para descargar el archivo en el sistema de archivos del dispositivo móvil
+  async descargarArchivo(contenido: string, nombreArchivo: string) {
+    try {
+      // Guardar el archivo utilizando Capacitor Filesystem
+      await Filesystem.writeFile({
+        path: nombreArchivo,
+        data: contenido,
+        directory: Directory.Documents,
+        encoding: Encoding.UTF8,
+      });
 
-    const enlace = document.createElement('a');
-    enlace.href = url;
-    enlace.download = nombreArchivo;
-
-    document.body.appendChild(enlace); // Añadir el enlace al DOM
-    enlace.click();
-    document.body.removeChild(enlace); // Eliminar el enlace después de la descarga
-
-    window.URL.revokeObjectURL(url); // Limpiar la URL después de la descarga
+      alert('Archivo guardado exitosamente en la carpeta de documentos');
+    } catch (e) {
+      console.error('Error guardando el archivo', e);
+      alert('No se pudo guardar el archivo.');
+    }
   }
 }
