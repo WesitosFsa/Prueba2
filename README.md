@@ -1,6 +1,11 @@
 # PRUEBA1-APPMOVI
+
 GarzonMateo Prueba1 Creada con ionic
 ![{936BB73F-1AB1-4FB8-AD84-67FB22E7B12A}](https://github.com/user-attachments/assets/37684459-b9a5-464c-aaaf-be7be4e81039)
+
+-Enlace:-
+
+[Descargar APK](https://github.com/WesitosFsa/PRUEBA1-APPMOVI/blob/App-Mejoradas/GARZONMATEO-PRUEBA.apk?raw=true)
 
 -Tab 1 informacion sobre mi -
 
@@ -18,3 +23,8 @@ GarzonMateo Prueba1 Creada con ionic
 
 -Tab 5 Guardar texto -
 ![image](https://github.com/user-attachments/assets/44779340-3b5d-465e-a54c-3d35aaef1f3b)
+-ScreenSplash-
+![image](https://github.com/user-attachments/assets/1141b3c4-d2f1-490a-9f15-7058e447dcac)
+
+-Icono-
+![image](https://github.com/user-attachments/assets/eebeadc5-b522-478b-a19b-626c5b807be1)
