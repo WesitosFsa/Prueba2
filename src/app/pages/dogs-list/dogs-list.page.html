@@ -6,10 +6,9 @@
 
 <ion-content>
   <div *ngFor="let dogImage of dogImages; let i = index">
-    <!-- Mostrar imagen del perro -->
     <img [src]="dogImage" alt="Imagen de perro" />
-
-    <!-- Mostrar el título del libro correspondiente -->
-    <p>{{ bookTitles[i] }}</p>  <!-- Aquí se accede al título del libro usando el mismo índice que la imagen -->
+    <p>{{ bookTitles[i] }}</p>  
   </div>
 </ion-content>
+
+<ion-button expand="block">Guardar Titulos de Libro y perros </ion-button> 
