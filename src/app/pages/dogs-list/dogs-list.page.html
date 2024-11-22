@@ -5,10 +5,12 @@
 </ion-header>
 
 <ion-content>
+  <!-- Muestra las imágenes y títulos de los libros -->
   <div *ngFor="let dogImage of dogImages; let i = index">
     <img [src]="dogImage" alt="Imagen de perro" />
-    <p>{{ bookTitles[i] }}</p>  
+    <p>{{ bookTitles[i] }}</p>
   </div>
-</ion-content>
 
-<ion-button expand="block">Guardar Titulos de Libro y perros </ion-button> 
+  <!-- Botón para guardar los títulos de los libros y las imágenes de perros -->
+  <ion-button expand="block" (click)="saveBooksAndDogs()">Guardar Titulos de Libro y Perros</ion-button>  
+</ion-content>

@@ -1,24 +1,26 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore'; // Importamos Firestore
-import { environment } from 'src/environments/environment'; // Importamos la configuración de Firebase
-import { initializeApp } from 'firebase/app'; // Inicializamos Firebase
+import { AngularFirestore } from '@angular/fire/compat/firestore'; 
+import { environment } from 'src/environments/environment'; 
+import { initializeApp } from 'firebase/app'; 
+import { from, Observable } from 'rxjs';  
 
 @Injectable({
   providedIn: 'root',
 })
 export class FirebaseService {
-  private db = initializeApp(environment.firebaseConfig);
+  private db = initializeApp(environment.firebaseConfig); 
 
   constructor(private firestore: AngularFirestore) {}
 
-  saveBookAndDog(bookTitle: string, dogImageUrl: string): Promise<void> {
+
+  saveBookAndDog(Titulo: string, Imagen: string): Observable<any> {
     const data = {
-      bookTitle,
-      dogImageUrl,
-      createdAt: new Date(),
+      Titulo,
+      Imagen,
+      fechad: new Date(), 
     };
 
-    
-    return this.firestore.collection('DatosPrueba2').add(data);
+
+    return from(this.firestore.collection('PerrosLibros').add(data));  
   }
 }
