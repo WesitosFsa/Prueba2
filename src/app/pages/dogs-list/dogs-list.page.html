@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Imágenes de Perros y Títulos de Libros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let dogImage of dogImages; let i = index">
+    <!-- Mostrar imagen del perro -->
+    <img [src]="dogImage" alt="Imagen de perro" />
+
+    <!-- Mostrar el título del libro correspondiente -->
+    <p>{{ bookTitles[i] }}</p>  <!-- Aquí se accede al título del libro usando el mismo índice que la imagen -->
+  </div>
+</ion-content>
